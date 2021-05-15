@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+    --select-red: #e63946;
+    --select-maroon: #86000b;
+    --select-light: #f1faee;
+    --select-medium: #a8dadc;
+    --select-dark: #457b9d;
+    --select-darker: #1d3557;
+    --select-gradient: linear-gradient(0deg, rgba(29,53,87,1) 0%, rgba(168,218,220,1) 100%);
+  }
+  
+
+
+body {
+    font-family: "Roboto", sans-serif !important;
+  }
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: var( --select-medium);
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.headshot-shell {
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 1vw;
+    box-shadow: 0px 0px 16px 1px #00000030;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.headshot {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.button {
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 0.5vw;
+    color: white;
+    background-color: var(--select-red);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.button:hover {
+    background-color: var(--select-maroon);
+}
