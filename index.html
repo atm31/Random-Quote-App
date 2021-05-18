@@ -7,12 +7,94 @@
 </head>
 <body>
   <div class="container">
-    <div class="headshot-shell">
-        <img class="headshot" src="https://upload.wikimedia.org/wikipedia/en/a/ae/RonSwanson.jpg" alt="A man's head and shoulders on a white background">
-        <button class="button">Speak!</button>
+
+    <div class="cardContainer inactive">
+      <div class="card">
+        <div class="side front">
+              
+              <div class="content">
+                <img class="headshot" src="https://upload.wikimedia.org/wikipedia/en/a/ae/RonSwanson.jpg" alt="A man's head and shoulders on a white background">
+                <h1>Ron Swanson</h1>
+                <button class="button">Gain Wisdom</button>
+              </div>
+        </div>
+        <div class="side back">
+          <div class="info">
+            <p id="quote"></p>
+            <h2>--Ron</h2>
+           </div>
+        </div>
+      </div>
     </div>
-
+    
   </div>
+<script>
+// const endpoint = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
 
+// const quotes = [];
+
+//fetch returns promise that has a json method this makes the blob of stuff returned converted to json.
+//the second then method pushes data onto the empty array by using ES6 spread. Spread into push method.
+
+// fetch(endpoint)
+//   .then(blob => blob.json())
+//   .then(data => quotes.push(...data))
+
+  // API returns a string with a single quote
+
+  //Do I have to fetch each time the button click occurs so I get a different quote each time?
+
+function displayQuote () {
+  fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+    .then(blob => blob.json())
+    .then(data => quotedLine.innerHTML = data)
+
+}
+
+
+const button = document.querySelector(".button");
+const quotedLine = document.querySelector('#quote');  
+
+// button.addEventListener('click', displayQuote);
+
+
+const cards = document.querySelectorAll('.card');
+
+function transition() {
+  if (this.classList.contains('active')) {
+    this.classList.remove('active')
+  } else {
+    this.classList.add('active');
+  }
+  displayQuote();
+}
+
+cards.forEach(card => card.addEventListener('click', transition));
+
+</script>
 </body>
 </html>
+
+
+
+
+<!-- <div class="cardContainer inactive">
+  <div class="card">
+    <div class="side front">
+      <div class="img img1"></div>
+      <div class="info">
+        <h2>Super S</h2>
+        <p>A stand-on with an exceptional compact stance. Great for tight spaces and trailering.</p>
+      </div>
+    </div>
+    <div class="side back">
+      <div class="info">
+        <h2>At a glance</h2>
+        <div id="quote"></div>
+        <div class="btn">
+          <h4>Learn More</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
