@@ -135,7 +135,7 @@ align-items: center;
     margin-bottom: 18px;
   }
 .back p {
-      color: var(--select-medium);
+      color: var(--select-darker);
       font-weight: 300;
       margin: 1px 0 0 6px;
       transition: 0.3s ease-in-out;
